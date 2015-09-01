@@ -79,7 +79,14 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
     function update(dt) {
-        updateEntities(dt);
+      // Check bug location for game stage edges
+          if (this.x > 500) {
+          this.x = -(Math.round(Math.random()*500));
+          }
+
+      // Collision Testing for enemy hitting player
+          collisionCourse(this);
+          updateEntities(dt);
         // checkCollisions();
     }
 

@@ -17,14 +17,6 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
     this.x += Math.round(Math.random() * 100) * dt;
-
-// Check bug location for game stage edges
-    if (this.x > 500) {
-    this.x = -(Math.round(Math.random()*500));
-    }
-
-// Collision Testing for enemy hitting player call
-    collisionCourse(this);
 };
 
 // Draw the enemy on the screen, required method for game
@@ -101,7 +93,7 @@ var enemy1 = new Enemy(Math.round(Math.random()*-220),60);
 var enemy2 = new Enemy(Math.round(Math.random()*-220),140);
 var enemy3 = new Enemy(Math.round(Math.random()*-220),220);
 
-allEnemies = [enemy1, enemy2, enemy3];
+var allEnemies = [enemy1, enemy2, enemy3];
 
 // Place the player object in a variable called player
 
